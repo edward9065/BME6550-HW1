@@ -1,0 +1,9 @@
+To run the code, you must have python3 and pip installed. 
+
+First, starting from the same directory as the code and requirements.txt, install the require packages:
+`pip install -r requirements.txt`
+
+To run the code:
+`python hw1.py` or `python3 hw1.py` depending on the system
+
+The Rand indexes will be printed out in stdout and a plot.png of the clusters will be generated in this folder.

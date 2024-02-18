@@ -20,8 +20,8 @@ cho_kmeans, cho_gm = cluster(cho_data[:,2:], 5)
 cho_gt = cho_data[:,1]
 cho_kmeans_rand_score = adjusted_rand_score(cho_gt, cho_kmeans)
 cho_gm_rand_score = adjusted_rand_score(cho_gt, cho_gm)
-print(cho_kmeans_rand_score)
-print(cho_gm_rand_score)
+print(f"cho.txt K-means Rand score: {cho_kmeans_rand_score}")
+print(f"cho.txt GMM Rand score: {cho_gm_rand_score}")
 
 iyer_data = get_data("iyer.txt")
 iyer_data = iyer_data[iyer_data[:,1]!=-1]
@@ -29,8 +29,8 @@ iyer_kmeans, iyer_gm = cluster(iyer_data[:,2:], 10)
 iyer_gt = iyer_data[:,1]
 iyer_kmeans_rand_score = adjusted_rand_score(iyer_gt, iyer_kmeans)
 iyer_gm_rand_score = adjusted_rand_score(iyer_gt, iyer_gm)
-print(iyer_kmeans_rand_score)
-print(iyer_gm_rand_score)
+print(f"iyer.txt K-means Rand score: {iyer_kmeans_rand_score}")
+print(f"iyer.txt GMM Rand score: {iyer_gm_rand_score}")
 
 pca = PCA(n_components=2)
 cho_pca = pca.fit_transform(cho_data[:,2:])
@@ -71,6 +71,6 @@ axs[1,2].set_ylim(-20,5)
 axs[1,2].annotate(f"Rand Index {round(iyer_gm_rand_score, 4)}", (22,4))
 
 
-plt.show()
+# plt.show()
 plt.savefig("plot.png")
 # %%
